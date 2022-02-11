@@ -17,10 +17,10 @@
 		"http-errors": "^2.0.0",
 		"joi": "^17.6.0",
 		"lodash": "^4.17.21",
-		"mongoose": "^6.1.10"
+		"mongoose": "^6.1.10",
+		"morgan": "^1.10.0"
 	},
 	"devDependencies": {
-		"morgan": "^1.10.0",
 		"nodemon": "^2.0.15"
 	}
 }

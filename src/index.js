@@ -17,7 +17,7 @@ const PORT = process.env.PORT;
 // Database
 const DATABASE = process.env.DATABASE;
 // Prefix
-const PREFIX = process.env.PREFIX;
+const PREFIX = '/' + process.env.PREFIX;
 
 // Middleware
 app.use(cors());
