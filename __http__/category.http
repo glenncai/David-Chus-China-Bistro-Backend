@@ -1,0 +1,16 @@
+### Get all categories
+GET http://localhost:8000/api/categories
+Accept: application/json
+
+### Create a new category
+POST http://localhost:8000/api/categories
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "test4513135"
+}
+
+### Get categoty by id
+GET http://localhost:8000/api/categories/61ffa86eca2ed11d78612000
+Accept: application/json
