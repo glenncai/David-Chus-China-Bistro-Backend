@@ -7,13 +7,13 @@ const dishSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 			minlength: 5,
-			maxlength: 30,
+			maxlength: 50,
 		},
 		description: {
 			type: String,
 			required: true,
 			minlength: 10,
-			maxlength: 150,
+			maxlength: 250,
 		},
 		price: {
 			type: Number,

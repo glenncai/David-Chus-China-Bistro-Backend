@@ -8,7 +8,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "test4513135"
+  "name": "India"
 }
 
 ### Get categoty by id

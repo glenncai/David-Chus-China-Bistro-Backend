@@ -9,9 +9,9 @@ Accept: application/json
   "price": "100",
   "category": "61ffa86eca2ed11d78612000",
   "photo": {
-      "data": "123",
-      "contentType": "image/jpg"
-    }
+    "data": "123",
+    "type": "image/jpg"
+  }
 }
 
 ### Get all dishes
@@ -19,9 +19,18 @@ GET http://localhost:8000/api/dishes
 Accept: application/json
 
 ### Get dish by id
-GET http://localhost:8000/api/dishes/6201de104605dd60e272dff0
+GET http://localhost:8000/api/dishes/6207c0ca4acd13866f670168
 Accept: application/json
 
 ### Get photo
-GET http://localhost:8000/api/dishes/6201de104605dd60e272dff0/photo
+GET http://localhost:8000/api/dishes/62077c194acd13866f6521a5/photo
 Accept: image/jpeg
+
+### Fetch dishes by category
+POST http://localhost:8000/api/dishes/category/_search
+Content-Type: application/json
+Accept: application/json
+
+{
+  "categoriesInput": ["62077b2e4acd13866f652184", "62077b334acd13866f652186"]
+}

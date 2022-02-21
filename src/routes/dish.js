@@ -6,6 +6,7 @@ const {
 	fetchDishId,
 	fetchDishById,
 	fetchDishPhoto,
+	searchByCategory,
 } = require('../controllers/dish');
 
 router.post('/dishes', createDish);
@@ -17,5 +18,7 @@ router.param('id', fetchDishId);
 router.get('/dishes/:id', fetchDishById);
 
 router.get('/dishes/:id/photo', fetchDishPhoto);
+
+router.post('/dishes/category/_search', searchByCategory);
 
 module.exports = router;

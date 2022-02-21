@@ -88,6 +88,27 @@ exports.fetchDishPhoto = async (req, res) => {
 	}
 };
 
+exports.searchByCategory = async (req, res, next) => {
+	let { categoriesInput } = req.body;
+	let criteria = {};
+
+	try {
+		if (categoriesInput.length === 0) {
+			return next(createError(404, 'No categories specified.'));
+		}
+
+		criteria = { category: { $in: categoriesInput } };
+
+		const result = await Dish.find(criteria)
+			.select('-photo')
+			.populate('category', '_id name');
+
+		res.status(200).json(result);
+	} catch (error) {
+		next(error);
+	}
+};
+
 const savePhoto = (dish, photo) => {
 	// TODO: Handle empty object scenario using ladash
 	if (photo !== null && imageTypes.includes(photo.type)) {
