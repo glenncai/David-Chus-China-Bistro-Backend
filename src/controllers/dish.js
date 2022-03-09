@@ -32,9 +32,7 @@ exports.createDish = async (req, res, next) => {
 
 		// Dish already exists (handle MongoServerError E11000 error)
 		if (error.message.includes('E11000')) {
-			return next(
-				createError.Conflict(`The dish ${dish.name} already exists.`),
-			);
+			return next(createError.Conflict(`The dish ${dish.name} already exists.`));
 		}
 		next(error);
 	}
@@ -63,9 +61,7 @@ exports.fetchDishById = async (req, res) => {
 
 exports.fetchDishes = async (req, res, next) => {
 	try {
-		const dishes = await Dish.find()
-			.select('-photo')
-			.populate('category', '_id, name'); // refer to category field and includes _id and name columns.
+		const dishes = await Dish.find().select('-photo').populate('category', '_id, name'); // refer to category field and includes _id and name columns.
 
 		if (dishes.length === 0) {
 			return next(createError(404, 'No dishes not found.'));
