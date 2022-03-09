@@ -11,6 +11,7 @@ const app = express();
 // Import routes
 const categoryRoutes = require('./routes/category');
 const dishRoutes = require('./routes/dish');
+const userRoutes = require('./routes/user');
 
 // Port
 const PORT = process.env.PORT;
@@ -33,6 +34,7 @@ app.use(express.urlencoded({ limit: '1mb', extended: true }));
 // Use routes
 app.use(PREFIX, categoryRoutes);
 app.use(PREFIX, dishRoutes);
+app.use(PREFIX, userRoutes);
 
 // Listen port
 app.listen(PORT, async () => {
