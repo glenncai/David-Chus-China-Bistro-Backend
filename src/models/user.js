@@ -11,6 +11,32 @@ const userSchema = new mongoose.Schema(
 			required: true,
 			unique: true,
 		},
+		address: {
+			full_name: {
+				type: String,
+			},
+			line1: {
+				type: String,
+			},
+			line2: {
+				type: String,
+			},
+			city: {
+				type: String,
+			},
+			state: {
+				type: String,
+			},
+			zip: {
+				type: String,
+			},
+			country: {
+				type: String,
+			},
+			phone: {
+				type: String,
+			},
+		},
 	},
 	{ timestamps: true },
 );
