@@ -54,7 +54,7 @@ exports.updateAddress = async (req, res, next) => {
 			{ address },
 			{ new: true, runValidators: true, context: 'query' },
 		);
-		res.status(200).json(updatedUserObj);
+		res.status(200).json(updatedUserObj.address);
 	} catch (error) {
 		console.log(error);
 		next(createError(error));

@@ -1,0 +1,35 @@
+### Create New Order
+POST http://localhost:8000/api/orders
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImFENnBoQmhabzMzM3ZuMEtib1p6bCJ9.eyJpc3MiOiJodHRwczovL2RhdmlkY2h1c2NoaW5hYmlzdHJvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJHMTl3cDB0WmY0ZUtKbjlnUG5uWE1xSkZobnpNVDl1a0BjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9hcGktZGF2aWRjaHVzY2hpbmFiaXN0cm8iLCJpYXQiOjE2NDg5NzAyMTIsImV4cCI6MTY0OTA1NjYxMiwiYXpwIjoiRzE5d3AwdFpmNGVLSm45Z1BublhNcUpGaG56TVQ5dWsiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.lmiraKKG9Wy-Fe4knFVVswoZS8jX-uzcdQYxbAaKZD_WoIRzrC2liK0hkQgA9h9h5K2SFIgdUqv1nMAkrWP0ACUZHLqtokcLDuaqIL8SSuOnL0Xorq7jBeH9mHzu0C1RC3TDhcwHDamFM44TYMNKsL8LPkT_G7XkhPKcHvczO-Ivlh5FVbRWxs8gZmpjJv0c1WbhJJ2RU3TfC2yBZsGVIx-fUu9gfXZhwyOZpQiRbKrvFHsTBamou50CyFHfg44Y8VxGf1v5DNR8hq7_mnC7VltrkqU5FSNaFgGcpxCCIiEuOG7bIobUaS_vrMsDIbIruUQpn_dZdBpC3n90gk1jZA
+
+{
+  "order_data": {
+    "dishes": [
+      {
+        "_id": "9999999",
+        "name": "Beef with Garlic Sauce",
+        "description": "sliced beef sauteed in garlic sauce.",
+        "count" : "1",
+        "price": "99.26"
+      }
+    ],
+    "address": {
+      "full_name": "John",
+      "line1": "XXXXXXXXXXXXXXX",
+      "line2": "XXXXXXXXXXXXXXXX",
+      "city": "Japan",
+      "zip": "99037",
+      "state": "JPP",
+      "country": "Japn",
+      "phone": "+85262125731"
+    },
+    "order_total": "110"
+  }
+}
+
+### Update order status
+PUT http://localhost:8000/api/orders/cs_test_a1wqPUqtztxhCmI0uwvbxxTIfiXGHZu3KalhDdkF4Dboph65CEUwQoRlRg
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImFENnBoQmhabzMzM3ZuMEtib1p6bCJ9.eyJpc3MiOiJodHRwczovL2RhdmlkY2h1c2NoaW5hYmlzdHJvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MjQ5NTQyM2MwMjQyZDAwNjk5NGM1ODQiLCJhdWQiOlsiaHR0cHM6Ly9hcGktZGF2aWRjaHVzY2hpbmFiaXN0cm8iLCJodHRwczovL2RhdmlkY2h1c2NoaW5hYmlzdHJvLnVzLmF1dGgwLmNvbS91c2VyaW5mbyJdLCJpYXQiOjE2NDg5OTY1MzYsImV4cCI6MTY0OTA4MjkzNiwiYXpwIjoiQWpKOHNtWlNyMlIxajdXYktqczZ2RHBzd0xOU3BDSVgiLCJzY29wZSI6Im9wZW5pZCBwcm9maWxlIGVtYWlsIn0.iFtXAeeYt6kZF1FFjzVYV69zAFut0ykR4gNm1jI1sx4DOU-GDSPE73GT1X76qvDL93kMW0IUDvhc2aLv0UszANs-deRY0I52fPWWY0v5fTaicJAlNTt1z32m4etYHUw5_AvuFiOBr-njWQL0n5wSLD6RFvavW_ah3RTrD_6629PuUw5YPeG60qzOeySWt9xROKD60B3sWsSnlnja6pbRM1SE2_k8EB8kyvYTE-FEfOsVqHIyk1TdJSfb4wQ7z9QJUFxMKEDBRnw7ROhx1ZhHS2WyFxoAHy7vKCAH_fc3LL3vAosogHQELYmNqRuZ2B9IGv4dbIGlCuDLkto1I4h7VA

@@ -1,15 +1,23 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema(
+const orderSchema = mongoose.Schema(
 	{
 		_id: {
 			type: String,
 			required: true,
 		},
-		email: {
+		checkout_session_id: {
 			type: String,
-			required: true,
-			unique: true,
+		},
+		placedBy: {
+			type: String,
+		},
+		contents: {
+			type: Array,
+			default: [],
+		},
+		total: {
+			type: Number,
 		},
 		address: {
 			full_name: {
@@ -30,19 +38,23 @@ const userSchema = new mongoose.Schema(
 			zip: {
 				type: String,
 			},
-			country: {
-				type: String,
-			},
 			phone: {
 				type: String,
 			},
+			country: {
+				type: String,
+			},
 		},
-		order_history: {
+		status: {
 			type: Array,
 			default: [],
+		},
+		__v: {
+			type: Number,
+			select: false,
 		},
 	},
 	{ timestamps: true },
 );
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Order', orderSchema);

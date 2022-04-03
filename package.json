@@ -11,6 +11,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"bitly": "^7.1.2",
 		"cors": "^2.8.5",
 		"dotenv": "^15.0.0",
 		"express": "^4.17.2",
@@ -20,7 +21,10 @@
 		"jwks-rsa": "^2.0.5",
 		"lodash": "^4.17.21",
 		"mongoose": "^6.1.10",
-		"morgan": "^1.10.0"
+		"morgan": "^1.10.0",
+		"stripe": "^8.209.0",
+		"twilio": "^3.76.0",
+		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.15"
