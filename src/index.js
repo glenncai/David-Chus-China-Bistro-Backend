@@ -12,6 +12,8 @@ const app = express();
 const categoryRoutes = require('./routes/category');
 const dishRoutes = require('./routes/dish');
 const userRoutes = require('./routes/user');
+const orderRoutes = require('./routes/order');
+const paymentRoutes = require('./routes/payment');
 
 // Port
 const PORT = process.env.PORT;
@@ -35,6 +37,8 @@ app.use(express.urlencoded({ limit: '1mb', extended: true }));
 app.use(PREFIX, categoryRoutes);
 app.use(PREFIX, dishRoutes);
 app.use(PREFIX, userRoutes);
+app.use(PREFIX, orderRoutes);
+app.use(PREFIX, paymentRoutes);
 
 // Listen port
 app.listen(PORT, async () => {
