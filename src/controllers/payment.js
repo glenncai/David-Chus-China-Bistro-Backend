@@ -26,13 +26,13 @@ exports.fulfillOrder = async (req, res, next) => {
 				const orderTrackingURL = `https://davidchuschinabistro.netlify.app/orders/${order._id}`;
 
 				// Create tiny URL
-				const tinyURL = await shortenURL(orderTrackingURL);
+				// const tinyURL = await shortenURL(orderTrackingURL);
 
 				// Form a order success message
-				const userMessage = createMessage(order._id, tinyURL);
+				// const userMessage = createMessage(order._id, tinyURL);
 
 				// Send message
-				sendMessage(userMessage, phoneNum);
+				// sendMessage(userMessage, phoneNum);
 			} catch (error) {
 				console.log(error);
 				next(createError(error));

@@ -102,3 +102,23 @@ exports.updateOrderStatus = async (req, res, next) => {
 		next(createError(error));
 	}
 };
+
+exports.getMyOrders = async (req, res, next) => {
+	const userId = getUser(req);
+	const limit = parseInt(req.query.limit);
+
+	try {
+		const orders = await User.aggregate([
+			{ $match: { _id: userId } },
+			{ $unwind: '$order_history' },
+			{ $limit: limit },
+			{ $sort: { 'order_history.createdAt': -1 } },
+			{ $group: { _id: '_id', orders: { $push: '$order_history' } } },
+			{ $project: { _id: 0, orders: 1 } },
+		]);
+		res.status(200).json(orders[0]);
+	} catch (error) {
+		console.log(error);
+		next(createError(error));
+	}
+};
